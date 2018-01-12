@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G18013" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="17C205" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI2-5R-kds">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI2-5R-kds">
                                 <rect key="frame" x="47" y="63" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,47 +35,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7X-Q9-BXK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7X-Q9-BXK">
                                 <rect key="frame" x="117" y="54" width="186" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98723436115859453" green="1" blue="0.13289828861564279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="Ezr-0R-ftN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="g4E-FJ-FbP"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGm-fN-KeS">
+                                <rect key="frame" x="117" y="101" width="186" height="30"/>
+                                <color key="backgroundColor" red="0.96886520243250096" green="1" blue="0.11995655832358731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-oz-kCq">
-                                <rect key="frame" x="45" y="190" width="258" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-oz-kCq">
+                                <rect key="frame" x="106" y="171" width="175" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="7ha-8X-A2V"/>
+                                </constraints>
+                                <state key="normal" title="Add" image="add-1"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tiz-h5-puu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="borra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-FQ-aAA">
-                                <rect key="frame" x="117" y="275" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGm-fN-KeS">
-                                <rect key="frame" x="117" y="101" width="186" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g7X-Q9-BXK" firstAttribute="bottom" secondItem="nI2-5R-kds" secondAttribute="bottom" id="41f-ng-lcc"/>
+                            <constraint firstItem="g7X-Q9-BXK" firstAttribute="trailing" secondItem="AGm-fN-KeS" secondAttribute="trailing" id="FuK-wH-LsJ"/>
+                            <constraint firstItem="g7X-Q9-BXK" firstAttribute="leading" secondItem="AGm-fN-KeS" secondAttribute="leading" id="JeF-IK-I39"/>
+                            <constraint firstItem="AGm-fN-KeS" firstAttribute="top" secondItem="g7X-Q9-BXK" secondAttribute="bottom" constant="17" id="PhE-4c-ZLs"/>
+                            <constraint firstItem="5kg-oz-kCq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="SJs-Dg-QwX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g7X-Q9-BXK" secondAttribute="trailing" constant="56" id="cX2-Ve-2T6"/>
+                            <constraint firstItem="5kg-oz-kCq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="289" id="hgR-XY-TuX"/>
+                            <constraint firstAttribute="trailing" secondItem="5kg-oz-kCq" secondAttribute="trailing" constant="100" id="q2k-uG-I3D"/>
+                            <constraint firstItem="g7X-Q9-BXK" firstAttribute="leading" secondItem="nI2-5R-kds" secondAttribute="trailing" constant="28" id="skh-Lx-5wG"/>
+                            <constraint firstItem="g7X-Q9-BXK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="zf7-Zt-DCs"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="codText" destination="g7X-Q9-BXK" id="a6G-d9-VR0"/>
                         <outlet property="cosaText" destination="AGm-fN-KeS" id="WA7-gf-goo"/>
-                        <outlet property="resLabel" destination="Q1c-FQ-aAA" id="tBS-Ys-aS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="125"/>
+            <point key="canvasLocation" x="-313" y="85"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add-1" width="142" height="119"/>
+    </resources>
 </document>

@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 $sql =  "INSERT INTO tabla (`cod`, `cosa`) VALUES ('$cod','$cosa');";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "1";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

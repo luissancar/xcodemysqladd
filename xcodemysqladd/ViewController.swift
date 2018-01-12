@@ -12,11 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var codText: UITextField!
     @IBOutlet weak var cosaText: UITextField!
-    @IBOutlet weak var resLabel: UILabel!
+   
+    var  message : String = "" 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        resLabel.text = ""
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,32 +36,56 @@ class ViewController: UIViewController {
         
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
+        
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
             
             if error != nil {
                 print("error=\(error)")
+                self.message = "Error 1"
                 return
             }
             
             print("response = \(response)")
             
+            
+            // resultado (valor del echo de php)
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            
+            if ((responseString?.isEqual(to: "1")))! {
+                self.message = "Añadido"
+                
+            }
+            else {
+                self.message = "Error al añadir"
+                
+            }
+            
             print("responseString = \(responseString)")
         }
         task.resume()
+        let alert = UIAlertController(title: "Registro", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
         
         
-        let alertController = UIAlertController(title: "Registro", message:
-            "Añadido", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        print("ffff \(self.message)")
         
-        self.present(alertController, animated: true, completion: nil)
+        
+        
+        
+        
         
         codText.text = ""
         cosaText.text = ""
+        codText.becomeFirstResponder()  // pasar foco
     }
     
+    
+    
+        
     
 }
 
